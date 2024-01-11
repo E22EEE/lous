@@ -1,3 +1,4 @@
+from config import Config
 import pyrogram , pyromod
 
 from pyromod import listen
@@ -8,11 +9,11 @@ from kvsqlite.sync import Client as fdb
 
 db = fdb('data.sqlite', 'fuck')
 if not db.exists("admin_list"):
-    db.set('admin_list', [1354518673])
+    db.set('admin_list', [5154904380])
 if not db.exists("sessions"):
     db.set('sessions', [])
 if not db.exists("ban_list"):
     db.set("ban_list", [])
-x = Client(name='lossclhos', api_id=19312827, api_hash='84da7f08e87849853b2fa6728e4192a2', bot_token='توكين', workers=20, plugins=p, parse_mode=enums.ParseMode.DEFAULT)
+x = Client(name='lossclhos', api_id=19312827, api_hash='84da7f08e87849853b2fa6728e4192a2', bot_token=Config.TG_BOT_TOKEN, workers=20, plugins=p, parse_mode=enums.ParseMode.DEFAULT)
 alive()
 x.run()
